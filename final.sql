@@ -95,8 +95,18 @@ FROM
     JOIN order_details ON orders.order_id = order_details.order_id
     GROUP BY day) AS order_quantity;
 
-Determine the top 3 most ordered pizza types based on revenue ?
-select pizza_types.category, round(sum(quantity * price),2) as total_revenue from pizza_types join pizzas on pizzas.pizza_type_id = pizza_types.pizza_type_id join order_details on pizzas.pizza_id = order_details.pizza_id group by category order by total_revenue desc;
+-- Determine the top 3 most ordered pizza types based on revenue ?
+SELECT 
+    pizza_types.category,
+    ROUND(SUM(quantity * price), 2) AS total_revenue
+FROM
+    pizza_types
+        JOIN
+    pizzas ON pizzas.pizza_type_id = pizza_types.pizza_type_id
+        JOIN
+    order_details ON pizzas.pizza_id = order_details.pizza_id
+GROUP BY category
+ORDER BY total_revenue DESC;
 
 -- Calculate the percentage contribution of each pizza type to total revenue ?
 SELECT 
