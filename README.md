@@ -24,7 +24,7 @@ SELECT
             2) AS total_sales
 FROM
     order_details
-        INNER JOIN
+         JOIN
     pizzas ON order_details.pizza_id = pizzas.pizza_id;
     
     
