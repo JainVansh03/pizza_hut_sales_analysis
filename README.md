@@ -1,6 +1,6 @@
 ﻿# pizza_hut-sales-analysis
 
-** Here's the Sql query with questions -**
+**Here's the Sql query with questions -**
 
 **show databases;
 use pizza_hut;
